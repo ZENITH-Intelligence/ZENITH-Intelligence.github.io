@@ -80,7 +80,7 @@
                 </div>
               </div>
               <div class="depth-4-frame-45">
-                <button class="depth-5-frame-036">
+                <button id='submitButton' class="depth-5-frame-036" >
                   <div class="depth-6-frame-046">
                     <b class="continue">Continue</b>
                   </div>
@@ -88,15 +88,27 @@
               </div>
             </form>
           </div>
-          <footer class="depth-2-frame-2">
+          <footer class="depth-2-frame-2" onclick="InviteCode()">
             <div class="depth-3-frame-010">
               <div class="depth-4-frame-019">
-                <div class="already-have-an">Already have an invite?</div>
+                <div  class="already-have-an">Already have an invite?</div>
               </div>
             </div>
           </footer>
         </section>
       </main>
     </div>
+    <script>
+      function InviteCode(){//implement invite code UI changes and backend
+        alert("THIS FUNCTION WORKS");
+      }
+      var submit = document.getElementById("submitButton");
+      if (submit) {
+
+        submit.addEventListener("click", function (e) {
+          window.location.href = "./demo-page-1.html";
+        });
+      }
+    </script>
   </body>
 </html>
