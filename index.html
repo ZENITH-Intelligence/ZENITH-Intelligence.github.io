@@ -99,6 +99,8 @@
       </main>
     </div>
     <script>
+      var lastPage = sessionStorage.lastPage;
+      sessionStorage.lastPage = "index";
       function InviteCode(){//implement invite code UI changes and backend
         alert("implement invite code UI changes and backend");
       }
@@ -109,6 +111,7 @@
           window.location.href = "./demo-page-1.html";
         });
       }
+      
     </script>
   </body>
 </html>

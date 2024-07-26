@@ -374,6 +374,10 @@
     </div>
 
     <script>
+      var lastPage = sessionStorage.lastPage;
+      sessionStorage.lastPage = "demo1";
+
+
       var aPIText = document.getElementById("aPIText");
       if (aPIText) {
         aPIText.addEventListener("click", function (e) {
