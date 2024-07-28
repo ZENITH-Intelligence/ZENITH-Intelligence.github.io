@@ -56,27 +56,28 @@
                   </div>
                   <input
                     class="depth-6-frame-117"
-                    placeholder="John     Doe"
+                    placeholder="John Doe"
                     type="text"
                   />
                 </div>
               </div>
-              <div class="depth-4-frame-34">
-                <div class="depth-5-frame-034">
-                  <div class="depth-6-frame-044">
-                    <input
-                      class="your-organization"
-                      placeholder="Your  organization"
-                      type="text"
-                    />
-                  </div>
+              <div class="depth-4-frame-28">
+                <div class="depth-5-frame-033">
+                  <input
+                    class="depth-6-frame-117"
+                    placeholder="Your Organization"
+                    type="text"
+                  />
                 </div>
               </div>
-              <div class="depth-4-frame-35">
-                <div class="depth-5-frame-035">
-                  <div class="depth-6-frame-045">
-                    <input class="email" placeholder="Email " type="text" />
-                  </div>
+              <div class="depth-4-frame-28">
+                <div class="depth-5-frame-033">
+                  <input  
+                    id="'email"
+                    class="depth-6-frame-117"
+                    placeholder="Email"
+                    type="email"
+                  />
                 </div>
               </div>
               <div class="depth-4-frame-45">
@@ -85,9 +86,7 @@
                     <b class="continue">Continue</b>
                   </div>
                 </button>
-                <form action="demo-page-1.html" method="get">
-                  <!-- Add form fields here if needed -->
-                  <button type="submit">Submit</button>
+                
               </form>
               </div>
             </form>
@@ -112,9 +111,27 @@
       if (submit) {
 
         submit.addEventListener("click", function (e) {
+          //signin();
+          
           window.location.href = "./demo-page-1.html";
           alert("Processing")
         });
+      }
+
+      function signin(){
+        var xhr = new XMLHttpRequest();
+        var email = document.getElementById('email').value;
+        xhr.open("POST", "<REDATED URL>", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            emailAddress: email
+        }));
+        xhr.onload = function() {
+          console.log("RESPONSE:")
+          console.log(this.responseText);
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+        }
       }
       
     </script>
