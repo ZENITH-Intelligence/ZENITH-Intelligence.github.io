@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="signin()">
+        Submit
+    </button>
+    <script>
+        function signin(){
+        var xhr = new XMLHttpRequest();
+        var email = "nksahu1213@gmail.com"
+        xhr.open("POST", "https://script.google.com/macros/s/AKfycbw8DdnZ6yvJT50ZOgzRjD77SqvI8Vkjxr_AROzX5ihiaek5UkYEt0Bh0WiRIVkckbBl/exec", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            emailAddress: email
+        }));
+        xhr.onload = function() {
+          console.log("RESPONSE:")
+          console.log(this.responseText);
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+          document.write(data);
+        }
+      }
+    </script>
+</body>
+</html>
